@@ -42,7 +42,7 @@ wepy build --watch
 
 扫码访问小程序:
 
-![诗词墨客](https://raw.githubusercontent.com/huangjianke/weapp-poem/master/images/code.png)
+![中文唐诗宋词](https://userless-1311979162.cos.ap-guangzhou.myqcloud.com/img_bed/30764933.png?imageMogr2/quality/25/strip/format/jpg/size-limit/15k!)
 
 ## 部分页面展示
 |摘录|详情|
