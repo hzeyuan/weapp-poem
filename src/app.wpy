@@ -1,0 +1,93 @@
+<style lang="less">
+@import './styles/base';
+</style>
+
+<script>
+import wepy from 'wepy';
+import 'wepy-async-function';
+
+// const AV = require('./libs/av-weapp-min.js');
+const AV = require('leancloud-storage');
+// AV.init('WMAqgOcloc6TlA9OjwYSboAA-gzGzoHsz', 'lyFlWrtpvJGWNxzriUoyYRGr');
+AV.init({
+  // appId: '',
+  // appKey: '',
+  // serverURL: '',
+});
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/extract/index',
+      'pages/library/index',
+      'pages/library/item_detail',
+      'pages/author/index',
+      'pages/author/author_detail',
+    ],
+    window: {
+      backgroundTextStyle: 'dark',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: '',
+      navigationBarTextStyle: 'black',
+    },
+    tabBar: {
+      borderStyle: 'black',
+      backgroundColor: '#ffffff',
+      color: '#8a8a8a',
+      selectedColor: '#2d8cf0',
+      list: [
+        {
+          pagePath: 'pages/extract/index',
+          iconPath: './assets/tab_extract.png',
+          selectedIconPath: './assets/tab_extract_s.png',
+          text: '摘录',
+        },
+        {
+          pagePath: 'pages/library/index',
+          iconPath: './assets/tab_library.png',
+          selectedIconPath: './assets/tab_library_s.png',
+          text: '文库',
+        },
+        {
+          pagePath: 'pages/author/index',
+          iconPath: './assets/tab_author.png',
+          selectedIconPath: './assets/tab_author_s.png',
+          text: '作者',
+        },
+      ],
+    },
+  };
+
+  globalData = {
+    userInfo: null,
+    windowHeight: 0,
+  };
+
+  constructor() {
+    super();
+    // 开启promise
+    this.use('promisify');
+    this.use('requestfix');
+  }
+
+  onLaunch() {
+    let that = this;
+    wepy.getSystemInfo().then((res) => {
+      that.globalData.windowHeight = res.windowHeight * (750 / res.windowWidth);
+    });
+  }
+
+  getUserInfo(cb) {
+    const that = this;
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo;
+    }
+    wepy.getUserInfo({
+      success(res) {
+        that.globalData.userInfo = res.userInfo;
+        cb && cb(res.userInfo);
+      },
+    });
+  }
+}
+</script>
