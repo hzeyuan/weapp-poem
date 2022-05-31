@@ -1,5 +1,17 @@
-### 诗词墨客
-本仓库是诗词墨客小程序对应的开源仓库，旨在分享微信小程序的开发经验。
+
+
+
+### 前言
+本仓库fork自https://github.com/nslogx/weapp-poem
+
+### 增加了
+
+- [✅] 增加搜索功能
+- [✅] 语音功能
+- [✅] 简繁转换
+
+### 唐诗宋词小程序
+
 
 该项目采用 [Wepy](https://github.com/wepyjs/wepy) 框架 + [iview-weapp](https://github.com/TalkingData/iview-weapp) UI组件库，古诗词数据源来自于 [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry) 开源仓库，包含5.5万首唐诗、26万首宋诗和2.1万首宋词. 唐宋两朝近1.4万古诗人, 和两宋时期1.5K词人。
 
@@ -39,11 +51,6 @@ wepy build --watch
 |文库|作者|
 |![文库](https://raw.githubusercontent.com/huangjianke/weapp-poem/master/images/img02.png) | ![作者](https://raw.githubusercontent.com/huangjianke/weapp-poem/master/images/img03.png)|
 
-### Todo
-
-- [ ] 增加搜索功能
-- [ ] 增加生成摘录卡片功能
-- [ ] 增加收藏功能
 
 ### LICENSE
 
